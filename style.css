@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  background: #e7ecf9;
+}
+
+body {
+  --app-width: min(42rem, 100vw);
+
+  width: var(--app-width);
+  margin: 0 auto;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-image {
+  width: 100%;
+}
+
+.install-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.install-button--top {
+  top: calc(194 * var(--app-width) / 375);
+}
+
+.install-button--bottom {
+  bottom: calc(268 * var(--app-width) / 375);
+}
