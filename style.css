@@ -9,13 +9,13 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
-  background: #e7ecf9;
+  background:rgb(245, 245, 245);
 }
 
 body {
-  --app-width: min(42rem, 100vw);
+  --app-width: 42rem;
 
-  width: var(--app-width);
+  max-width: var(--app-width);
   margin: 0 auto;
 }
 
@@ -31,16 +31,48 @@ a {
   width: 100%;
 }
 
-.install-button {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.fixed {
+  position: fixed;
+  width: 100%;
+  max-width: var(--app-width);
 }
 
-.install-button--top {
-  top: calc(194 * var(--app-width) / 375);
+.top {
+  background: white;
+  top: 0;
+  box-shadow: 0 .2rem .4rem rgba(0, 0, 0, .04);
 }
 
-.install-button--bottom {
-  bottom: calc(268 * var(--app-width) / 375);
+.logo {
+  height: 6.2rem;
+  padding: 1.4rem;
+}
+
+.fab {
+  padding: 1.6rem 2.2rem;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  column-gap: .8rem;
+  bottom: 0;
+}
+
+.button {
+  border: none;
+  border-radius: .9rem;
+  background: black;
+  cursor: pointer;
+  box-shadow: 0 .2rem 3rem rgba(0, 0, 0, .31);
+  color: white;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.share {
+  padding: 1.7rem;
+}
+
+.main-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

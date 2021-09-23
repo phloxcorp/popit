@@ -1,8 +1,20 @@
 const analytics = firebase.analytics()
 
-const onClickInstallButton = () => {
-  analytics.logEvent('sign_up')
+const shareButton = document.querySelector('.share-button')
+
+shareButton.onclick = () => {
+  analytics.logEvent('share')
+
+  if (navigator.share) {
+    navigator.share({ url: location.href })
+  } else {
+    navigator.clipboard.writeText(location.href)
+    alert('링크를 클립보드에 복사했습니다.')
+  }
 }
 
-document.querySelector('.install-button--top').onclick = onClickInstallButton
-document.querySelector('.install-button--bottom').onclick = onClickInstallButton
+const mainButton = document.querySelector('.main-button')
+
+mainButton.onclick = () => {
+  analytics.logEvent('sign_up')
+}
